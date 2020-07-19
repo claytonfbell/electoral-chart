@@ -4,6 +4,7 @@ import {
   fade,
   Grid,
   makeStyles,
+  Paper,
   ThemeProvider,
   Tooltip,
   Typography,
@@ -24,6 +25,9 @@ const theme = createMuiTheme({
 })
 
 const useStyles = makeStyles({
+  paper: {
+    padding: theme.spacing(4),
+  },
   state: {
     borderRight: `1px solid #ccc`,
     borderTop: `1px solid #aaa`,
@@ -31,7 +35,7 @@ const useStyles = makeStyles({
     display: "inline-block",
     minHeight: 128,
   },
-  divided: { width: "50%", borderRight: `2px solid #333` },
+  divided: { width: "50%", borderRight: `2px dashed #333` },
 })
 
 type State = {
@@ -75,67 +79,72 @@ function App() {
           alignItems="center"
         >
           <Grid item xs={12}>
-            <Grid container justify="space-between">
-              <Grid item className={classes.divided}>
-                <Typography variant="h3">
-                  Biden{" "}
-                  {data.states.reduce(
-                    (a, b) => a + (b.avg > 0 ? b.votes : 0),
-                    0
-                  )}
-                </Typography>
+            <Paper className={classes.paper}>
+              <Grid container justify="space-between">
+                <Grid item className={classes.divided}>
+                  <Typography variant="h4">
+                    Biden{" "}
+                    {data.states.reduce(
+                      (a, b) => a + (b.avg > 0 ? b.votes : 0),
+                      0
+                    )}
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography variant="h4">
+                    Trump{" "}
+                    {data.states.reduce(
+                      (a, b) => a + (b.avg < 0 ? b.votes : 0),
+                      0
+                    )}
+                  </Typography>
+                </Grid>
               </Grid>
-              <Grid item>
-                <Typography variant="h3">
-                  Trump{" "}
-                  {data.states.reduce(
-                    (a, b) => a + (b.avg < 0 ? b.votes : 0),
-                    0
-                  )}
-                </Typography>
-              </Grid>
-            </Grid>
 
-            {data.states
-              .sort((a, b) => b.avg - a.avg)
-              .map((row) => (
-                <Tooltip
-                  key={row.state}
-                  title={`${row.state} ${
-                    row.avg === 100 || row.avg === -100
-                      ? ""
-                      : row.avg === 0
-                      ? `Tie`
-                      : row.avg > 0
-                      ? `Biden ${row.avg}%`
-                      : `Trump ${row.avg * -1}%`
-                  }`}
-                >
-                  <div
-                    className={classes.state}
-                    style={{
-                      backgroundColor: calculateColor(row),
-                      width: `${votePct(row.votes)}%`,
-                    }}
-                  ></div>
-                </Tooltip>
-              ))}
-            <Grid container justify="space-between">
-              <Grid item>
-                <Typography>
-                  Last Updated {moment(data.lastUpdate).format("llll")}
-                </Typography>
-                <Button
-                  disabled={disabled}
-                  color="primary"
-                  variant="outlined"
-                  onClick={handleUpdate}
-                >
-                  Update Now
-                </Button>
+              {data.states
+                .sort((a, b) => b.avg - a.avg)
+                .map((row) => (
+                  <Tooltip
+                    key={row.state}
+                    title={`${row.state} ${
+                      row.avg === 100 || row.avg === -100
+                        ? ""
+                        : row.avg === 0
+                        ? `Tie`
+                        : row.avg > 0
+                        ? `Biden ${row.avg}%`
+                        : `Trump ${row.avg * -1}%`
+                    }`}
+                  >
+                    <div
+                      className={classes.state}
+                      style={{
+                        backgroundColor: calculateColor(row),
+                        width: `${votePct(row.votes)}%`,
+                      }}
+                    ></div>
+                  </Tooltip>
+                ))}
+              <Grid container justify="space-between">
+                <Grid item>
+                  <Typography variant="caption">
+                    Last Updated {moment(data.lastUpdate).format("llll")}
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  {false && (
+                    <Button
+                      disabled={disabled}
+                      color="primary"
+                      variant="outlined"
+                      onClick={handleUpdate}
+                    >
+                      Update Now
+                    </Button>
+                  )}
+                </Grid>
               </Grid>
-            </Grid>
-            <Grid container justify="flex-end"></Grid>
+            </Paper>
           </Grid>
         </Grid>
       </Container>
