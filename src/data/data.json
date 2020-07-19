@@ -19,13 +19,13 @@
       "state": "AZ",
       "avg": 2.8,
       "votes": 11,
-      "lastUpdate": "2020-07-19T23:10:15.990Z"
+      "lastUpdate": "2020-07-19T23:18:02.638Z"
     },
     {
       "state": "CA",
       "avg": 27.3,
       "votes": 55,
-      "lastUpdate": "2020-07-19T23:10:18.638Z"
+      "lastUpdate": "2020-07-19T23:18:05.349Z"
     },
     {
       "state": "CO",
@@ -51,13 +51,13 @@
       "state": "FL",
       "avg": 6.4,
       "votes": 29,
-      "lastUpdate": "2020-07-19T23:10:16.534Z"
+      "lastUpdate": "2020-07-19T23:18:03.055Z"
     },
     {
       "state": "GA",
       "avg": -3,
       "votes": 16,
-      "lastUpdate": "2020-07-19T23:10:16.672Z"
+      "lastUpdate": "2020-07-19T23:18:03.206Z"
     },
     {
       "state": "HI",
@@ -68,7 +68,7 @@
       "state": "IA",
       "avg": -1.5,
       "votes": 6,
-      "lastUpdate": "2020-07-19T23:10:15.180Z"
+      "lastUpdate": "2020-07-19T23:18:01.601Z"
     },
     {
       "state": "ID",
@@ -104,7 +104,7 @@
       "state": "MA",
       "avg": 31,
       "votes": 11,
-      "lastUpdate": "2020-07-19T23:10:18.200Z"
+      "lastUpdate": "2020-07-19T23:18:04.954Z"
     },
     {
       "state": "MD",
@@ -120,7 +120,7 @@
       "state": "MI",
       "avg": 7.7,
       "votes": 16,
-      "lastUpdate": "2020-07-19T23:10:15.309Z"
+      "lastUpdate": "2020-07-19T23:18:01.792Z"
     },
     {
       "state": "MN",
@@ -131,7 +131,7 @@
       "state": "MO",
       "avg": -6.4,
       "votes": 10,
-      "lastUpdate": "2020-07-19T23:10:15.498Z"
+      "lastUpdate": "2020-07-19T23:18:02.047Z"
     },
     {
       "state": "MS",
@@ -147,7 +147,7 @@
       "state": "NC",
       "avg": 2,
       "votes": 15,
-      "lastUpdate": "2020-07-19T23:10:16.792Z"
+      "lastUpdate": "2020-07-19T23:18:03.361Z"
     },
     {
       "state": "ND",
@@ -163,37 +163,37 @@
       "state": "NH",
       "avg": 4.3,
       "votes": 4,
-      "lastUpdate": "2020-07-19T23:10:17.060Z"
+      "lastUpdate": "2020-07-19T23:18:03.655Z"
     },
     {
       "state": "NJ",
       "avg": 19.4,
       "votes": 14,
-      "lastUpdate": "2020-07-19T23:10:13.483Z"
+      "lastUpdate": "2020-07-19T23:18:00.242Z"
     },
     {
       "state": "NM",
       "avg": 11,
       "votes": 5,
-      "lastUpdate": "2020-07-19T23:10:14.422Z"
+      "lastUpdate": "2020-07-19T23:18:01.042Z"
     },
     {
       "state": "NV",
       "avg": 4,
       "votes": 6,
-      "lastUpdate": "2020-07-19T23:10:16.405Z"
+      "lastUpdate": "2020-07-19T23:18:02.936Z"
     },
     {
       "state": "NY",
       "avg": 24,
       "votes": 29,
-      "lastUpdate": "2020-07-19T23:10:18.462Z"
+      "lastUpdate": "2020-07-19T23:18:05.223Z"
     },
     {
       "state": "OH",
       "avg": 0,
       "votes": 18,
-      "lastUpdate": "2020-07-19T23:10:15.795Z"
+      "lastUpdate": "2020-07-19T23:18:02.386Z"
     },
     {
       "state": "OK",
@@ -209,7 +209,7 @@
       "state": "PA",
       "avg": 7,
       "votes": 20,
-      "lastUpdate": "2020-07-19T23:10:16.177Z"
+      "lastUpdate": "2020-07-19T23:18:02.803Z"
     },
     {
       "state": "RI",
@@ -230,13 +230,13 @@
       "state": "TN",
       "avg": -14,
       "votes": 11,
-      "lastUpdate": "2020-07-19T23:10:18.951Z"
+      "lastUpdate": "2020-07-19T23:18:05.536Z"
     },
     {
       "state": "TX",
       "avg": -0.2,
       "votes": 38,
-      "lastUpdate": "2020-07-19T23:10:16.911Z"
+      "lastUpdate": "2020-07-19T23:18:03.541Z"
     },
     {
       "state": "UT",
@@ -247,7 +247,7 @@
       "state": "VA",
       "avg": 11,
       "votes": 13,
-      "lastUpdate": "2020-07-19T23:10:14.551Z"
+      "lastUpdate": "2020-07-19T23:18:01.155Z"
     },
     {
       "state": "VT",
@@ -263,7 +263,7 @@
       "state": "WI",
       "avg": 6,
       "votes": 10,
-      "lastUpdate": "2020-07-19T23:10:15.024Z"
+      "lastUpdate": "2020-07-19T23:18:01.490Z"
     },
     {
       "state": "WV",
@@ -276,5 +276,5 @@
       "avg": -100
     }
   ],
-  "lastUpdate": "2020-07-19T23:10:19.529Z"
+  "lastUpdate": "2020-07-19T23:18:05.977Z"
 }
