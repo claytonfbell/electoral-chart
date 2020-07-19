@@ -1,5 +1,6 @@
 const scrapeIt = require("scrape-it")
 const fs = require("fs")
+const moment = require("moment")
 
 // Promise interface
 async function init() {
@@ -60,6 +61,7 @@ async function init() {
     pollNumbers.push({
       state: state.toUpperCase(),
       avg: rcpAvg,
+      lastUpdate: moment().toISOString(),
     })
   }
   pollNumbers = pollNumbers.filter((x) => x.avg !== null)
@@ -68,7 +70,11 @@ async function init() {
     const foundIndex = data.states.findIndex((y) => y.state === x.state)
     // update rcpAvg on existing
     if (foundIndex !== -1) {
-      data.states[foundIndex] = { ...data.states[foundIndex], avg: x.avg }
+      data.states[foundIndex] = {
+        ...data.states[foundIndex],
+        avg: x.avg,
+        lastUpdate: x.lastUpdate,
+      }
     }
     // add new state
     else {
@@ -84,8 +90,8 @@ async function init() {
     }
     return 0
   })
+  data.lastUpdate = moment().toISOString()
   fs.writeFileSync(`src/data/data.json`, JSON.stringify(data, undefined, 2))
-
   console.log(data)
 }
 

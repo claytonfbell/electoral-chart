@@ -1,84 +1,280 @@
 {
   "states": [
     {
+      "state": "AK",
+      "votes": 3,
+      "avg": -100
+    },
+    {
+      "state": "AL",
+      "votes": 9,
+      "avg": -15.5
+    },
+    {
+      "state": "AR",
+      "votes": 6,
+      "avg": -100
+    },
+    {
       "state": "AZ",
-      "avg": 2.8
+      "avg": 2.8,
+      "votes": 11,
+      "lastUpdate": "2020-07-19T23:10:15.990Z"
     },
     {
       "state": "CA",
-      "avg": 27.3
+      "avg": 27.3,
+      "votes": 55,
+      "lastUpdate": "2020-07-19T23:10:18.638Z"
+    },
+    {
+      "state": "CO",
+      "votes": 9,
+      "avg": 16.9
+    },
+    {
+      "state": "CT",
+      "votes": 7,
+      "avg": 100
+    },
+    {
+      "state": "DC",
+      "votes": 3,
+      "avg": 100
+    },
+    {
+      "state": "DE",
+      "votes": 3,
+      "avg": 100
     },
     {
       "state": "FL",
-      "avg": 6.4
+      "avg": 6.4,
+      "votes": 29,
+      "lastUpdate": "2020-07-19T23:10:16.534Z"
     },
     {
       "state": "GA",
-      "avg": -3
+      "avg": -3,
+      "votes": 16,
+      "lastUpdate": "2020-07-19T23:10:16.672Z"
+    },
+    {
+      "state": "HI",
+      "votes": 4,
+      "avg": 100
     },
     {
       "state": "IA",
-      "avg": -1.5
+      "avg": -1.5,
+      "votes": 6,
+      "lastUpdate": "2020-07-19T23:10:15.180Z"
+    },
+    {
+      "state": "ID",
+      "votes": 4,
+      "avg": -100
+    },
+    {
+      "state": "IL",
+      "votes": 20,
+      "avg": 100
+    },
+    {
+      "state": "IN",
+      "votes": 11,
+      "avg": -100
+    },
+    {
+      "state": "KS",
+      "votes": 6,
+      "avg": -9.3
+    },
+    {
+      "state": "KY",
+      "votes": 8,
+      "avg": -14.9
+    },
+    {
+      "state": "LA",
+      "votes": 8,
+      "avg": -100
     },
     {
       "state": "MA",
-      "avg": 31
+      "avg": 31,
+      "votes": 11,
+      "lastUpdate": "2020-07-19T23:10:18.200Z"
+    },
+    {
+      "state": "MD",
+      "votes": 10,
+      "avg": 100
+    },
+    {
+      "state": "ME",
+      "votes": 2,
+      "avg": 100
     },
     {
       "state": "MI",
-      "avg": 7.7
+      "avg": 7.7,
+      "votes": 16,
+      "lastUpdate": "2020-07-19T23:10:15.309Z"
+    },
+    {
+      "state": "MN",
+      "votes": 10,
+      "avg": 100
     },
     {
       "state": "MO",
-      "avg": -6.4
+      "avg": -6.4,
+      "votes": 10,
+      "lastUpdate": "2020-07-19T23:10:15.498Z"
+    },
+    {
+      "state": "MS",
+      "votes": 6,
+      "avg": -100
+    },
+    {
+      "state": "MT",
+      "votes": 3,
+      "avg": -9.3
     },
     {
       "state": "NC",
-      "avg": 2
+      "avg": 2,
+      "votes": 15,
+      "lastUpdate": "2020-07-19T23:10:16.792Z"
+    },
+    {
+      "state": "ND",
+      "votes": 3,
+      "avg": -100
+    },
+    {
+      "state": "NE",
+      "votes": 5,
+      "avg": -100
     },
     {
       "state": "NH",
-      "avg": 4.3
+      "avg": 4.3,
+      "votes": 4,
+      "lastUpdate": "2020-07-19T23:10:17.060Z"
     },
     {
       "state": "NJ",
-      "avg": 19.4
+      "avg": 19.4,
+      "votes": 14,
+      "lastUpdate": "2020-07-19T23:10:13.483Z"
     },
     {
       "state": "NM",
-      "avg": 11
+      "avg": 11,
+      "votes": 5,
+      "lastUpdate": "2020-07-19T23:10:14.422Z"
     },
     {
       "state": "NV",
-      "avg": 4
+      "avg": 4,
+      "votes": 6,
+      "lastUpdate": "2020-07-19T23:10:16.405Z"
     },
     {
       "state": "NY",
-      "avg": 24
+      "avg": 24,
+      "votes": 29,
+      "lastUpdate": "2020-07-19T23:10:18.462Z"
     },
     {
       "state": "OH",
-      "avg": 0
+      "avg": 0,
+      "votes": 18,
+      "lastUpdate": "2020-07-19T23:10:15.795Z"
+    },
+    {
+      "state": "OK",
+      "votes": 7,
+      "avg": -100
+    },
+    {
+      "state": "OR",
+      "votes": 7,
+      "avg": 100
     },
     {
       "state": "PA",
-      "avg": 7
+      "avg": 7,
+      "votes": 20,
+      "lastUpdate": "2020-07-19T23:10:16.177Z"
+    },
+    {
+      "state": "RI",
+      "votes": 4,
+      "avg": 100
+    },
+    {
+      "state": "SC",
+      "votes": 9,
+      "avg": -6.2
+    },
+    {
+      "state": "SD",
+      "votes": 3,
+      "avg": -100
     },
     {
       "state": "TN",
-      "avg": -14
+      "avg": -14,
+      "votes": 11,
+      "lastUpdate": "2020-07-19T23:10:18.951Z"
     },
     {
       "state": "TX",
-      "avg": -0.2
+      "avg": -0.2,
+      "votes": 38,
+      "lastUpdate": "2020-07-19T23:10:16.911Z"
+    },
+    {
+      "state": "UT",
+      "votes": 8,
+      "avg": -8.1
     },
     {
       "state": "VA",
-      "avg": 11
+      "avg": 11,
+      "votes": 13,
+      "lastUpdate": "2020-07-19T23:10:14.551Z"
+    },
+    {
+      "state": "VT",
+      "votes": 3,
+      "avg": 100
+    },
+    {
+      "state": "WA",
+      "votes": 12,
+      "avg": 24.8
     },
     {
       "state": "WI",
-      "avg": 6
+      "avg": 6,
+      "votes": 10,
+      "lastUpdate": "2020-07-19T23:10:15.024Z"
+    },
+    {
+      "state": "WV",
+      "avg": -100,
+      "votes": 5
+    },
+    {
+      "state": "WY",
+      "votes": 3,
+      "avg": -100
     }
-  ]
+  ],
+  "lastUpdate": "2020-07-19T23:10:19.529Z"
 }
