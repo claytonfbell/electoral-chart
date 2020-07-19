@@ -1,0 +1,84 @@
+{
+  "states": [
+    {
+      "state": "AZ",
+      "avg": 2.8
+    },
+    {
+      "state": "CA",
+      "avg": 27.3
+    },
+    {
+      "state": "FL",
+      "avg": 6.4
+    },
+    {
+      "state": "GA",
+      "avg": -3
+    },
+    {
+      "state": "IA",
+      "avg": -1.5
+    },
+    {
+      "state": "MA",
+      "avg": 31
+    },
+    {
+      "state": "MI",
+      "avg": 7.7
+    },
+    {
+      "state": "MO",
+      "avg": -6.4
+    },
+    {
+      "state": "NC",
+      "avg": 2
+    },
+    {
+      "state": "NH",
+      "avg": 4.3
+    },
+    {
+      "state": "NJ",
+      "avg": 19.4
+    },
+    {
+      "state": "NM",
+      "avg": 11
+    },
+    {
+      "state": "NV",
+      "avg": 4
+    },
+    {
+      "state": "NY",
+      "avg": 24
+    },
+    {
+      "state": "OH",
+      "avg": 0
+    },
+    {
+      "state": "PA",
+      "avg": 7
+    },
+    {
+      "state": "TN",
+      "avg": -14
+    },
+    {
+      "state": "TX",
+      "avg": -0.2
+    },
+    {
+      "state": "VA",
+      "avg": 11
+    },
+    {
+      "state": "WI",
+      "avg": 6
+    }
+  ]
+}
