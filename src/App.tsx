@@ -27,6 +27,15 @@ const useStyles = makeStyles((theme) => ({
     display: "inline-block",
     minHeight: 96,
   },
+  dividerContainer: {
+    position: "relative",
+  },
+  divider: {
+    position: "absolute",
+    borderRight: `2px dashed #999`,
+    minHeight: 96,
+    width: `50%`,
+  },
 }))
 
 export const blue = `#0077cf`
@@ -148,7 +157,9 @@ function App() {
                 </Typography>
               </Grid>
             </Grid>
-
+            <div className={classes.dividerContainer}>
+              <div className={classes.divider}>&nbsp;hello world</div>
+            </div>
             {states
               .sort((a, b) => b.avg - a.avg)
               .map((row) => (
@@ -167,6 +178,7 @@ function App() {
                   ></div>
                 </Tooltip>
               ))}
+
             <Grid container justify="center">
               <Grid item>
                 <br />
