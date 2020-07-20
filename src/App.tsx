@@ -10,6 +10,7 @@ import {
   Typography,
 } from "@material-ui/core"
 import Container from "@material-ui/core/Container"
+import CheckIcon from "@material-ui/icons/Check"
 import moment from "moment"
 import React from "react"
 import data from "./data/data.json"
@@ -48,9 +49,10 @@ function App() {
 
   const votePct = (votes: number) => 100 * ((votes || 0) / 538)
 
+  const blue = `#0077cf`
+  const red = `#c82333`
+
   function calculateColor(row: State) {
-    const blue = `#0077cf`
-    const red = `#c82333`
     let color = row.avg === 0 ? "#ccc" : row.avg > 0 ? blue : red
 
     const spread = Math.min(33, row.avg > 0 ? row.avg : row.avg * -1)
@@ -65,6 +67,9 @@ function App() {
     avg: favor * -1 + Math.max(-33, Math.min(33, x.avg)),
   }))
 
+  const bidenVotes = states.reduce((a, b) => a + (b.avg > 0 ? b.votes : 0), 0)
+  const trumpVotes = states.reduce((a, b) => a + (b.avg < 0 ? b.votes : 0), 0)
+
   return (
     <ThemeProvider theme={theme}>
       <Container>
@@ -78,15 +83,19 @@ function App() {
             <Paper className={classes.paper}>
               <Grid container justify="space-between">
                 <Grid item className={classes.divided}>
-                  <Typography variant="h4">
-                    Biden{" "}
-                    {states.reduce((a, b) => a + (b.avg > 0 ? b.votes : 0), 0)}
+                  <Typography style={{ color: blue }} variant="h4">
+                    Biden {bidenVotes}
+                    {bidenVotes >= 270 && (
+                      <CheckIcon fontSize="inherit" color="inherit" />
+                    )}
                   </Typography>
                 </Grid>
                 <Grid item>
-                  <Typography variant="h4">
-                    Trump{" "}
-                    {states.reduce((a, b) => a + (b.avg < 0 ? b.votes : 0), 0)}
+                  <Typography style={{ color: red }} variant="h4">
+                    Trump {trumpVotes}
+                    {trumpVotes >= 270 && (
+                      <CheckIcon fontSize="inherit" color="inherit" />
+                    )}
                   </Typography>
                 </Grid>
               </Grid>
@@ -120,7 +129,7 @@ function App() {
                   <FavorSlider value={favor} onChange={(v) => setFavor(v)} />
                   <br />
                   <br />
-                  <Typography variant="caption" component="span">
+                  <Typography variant="caption" component="div" align="center">
                     Last Updated {moment(data.lastUpdate).format("llll")}
                   </Typography>
                 </Grid>

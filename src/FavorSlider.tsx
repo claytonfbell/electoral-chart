@@ -26,14 +26,14 @@ export default function FavorSlider(props: Props) {
         {props.value === 0
           ? "Margin of Error Slider"
           : props.value < 0
-          ? `+${props.value * -1} for Biden`
-          : `+${props.value} for Trump`}
+          ? `+${props.value * -1}% for Biden`
+          : `+${props.value}% for Trump`}
       </Typography>
       <Slider
         getAriaValueText={valuetext}
         aria-labelledby="discrete-slider"
         valueLabelDisplay="auto"
-        step={1}
+        step={0.5}
         marks
         min={-10}
         max={10}
