@@ -24,7 +24,7 @@ export default function TossupSlider(props: Props) {
       <Typography id="discrete-slider" gutterBottom>
         {props.value === 0
           ? "No Tossups"
-          : `<= ${props.value}% spread is Tossup`}
+          : `<= ${props.value.toFixed(1)}% spread is Tossup`}
       </Typography>
       <Slider
         getAriaValueText={valuetext}
