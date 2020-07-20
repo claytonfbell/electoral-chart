@@ -1,14 +1,12 @@
-import {
-  createMuiTheme,
-  CssBaseline,
-  fade,
-  Grid,
-  makeStyles,
-  ThemeProvider,
-  Tooltip,
-  Typography,
-} from "@material-ui/core"
 import Container from "@material-ui/core/Container"
+import CssBaseline from "@material-ui/core/CssBaseline/CssBaseline"
+import Grid from "@material-ui/core/Grid/Grid"
+import { ThemeProvider } from "@material-ui/core/styles"
+import { fade } from "@material-ui/core/styles/colorManipulator"
+import createMuiTheme from "@material-ui/core/styles/createMuiTheme"
+import makeStyles from "@material-ui/core/styles/makeStyles"
+import Tooltip from "@material-ui/core/Tooltip/Tooltip"
+import Typography from "@material-ui/core/Typography/Typography"
 import CheckIcon from "@material-ui/icons/Check"
 import moment from "moment"
 import React from "react"

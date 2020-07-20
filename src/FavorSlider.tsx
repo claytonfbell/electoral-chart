@@ -1,5 +1,5 @@
 import Slider from "@material-ui/core/Slider"
-import { makeStyles } from "@material-ui/core/styles"
+import makeStyles from "@material-ui/core/styles/makeStyles"
 import Typography from "@material-ui/core/Typography"
 import React from "react"
 
