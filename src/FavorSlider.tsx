@@ -24,7 +24,7 @@ export default function FavorSlider(props: Props) {
     <div className={classes.root}>
       <Typography id="discrete-slider" gutterBottom>
         {props.value === 0
-          ? "Margin of Error Slider"
+          ? "Margin for Error Slider"
           : props.value < 0
           ? `+${(props.value * -1).toFixed(1)}% for Biden`
           : `+${props.value.toFixed(1)}% for Trump`}

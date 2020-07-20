@@ -10,6 +10,7 @@ import Typography from "@material-ui/core/Typography/Typography"
 import CheckIcon from "@material-ui/icons/Check"
 import moment from "moment"
 import React from "react"
+import Battleground from "./Battleground"
 import data from "./data/data.json"
 import FavorSlider from "./FavorSlider"
 
@@ -22,12 +23,23 @@ const useStyles = makeStyles((theme) => ({
     borderTop: `1px solid #aaa`,
     borderBottom: `1px solid #aaa`,
     display: "inline-block",
-    minHeight: 156,
+    minHeight: 96,
   },
   divided: { width: "50%", borderRight: `2px dashed #333` },
 }))
 
-type State = {
+export const blue = `#0077cf`
+export const red = `#c82333`
+
+export function displaySpread(row: State) {
+  return row.avg === 0
+    ? `Tie`
+    : row.avg > 0
+    ? `Biden +${row.avg.toFixed(1)}%`
+    : `Trump +${(row.avg * -1).toFixed(1)}%`
+}
+
+export type State = {
   state: string
   avg: number
   votes: number
@@ -37,9 +49,6 @@ function App() {
   const classes = useStyles()
 
   const votePct = (votes: number) => 100 * ((votes || 0) / 538)
-
-  const blue = `#0077cf`
-  const red = `#c82333`
 
   function calculateColor(row: State) {
     let color = row.avg === 0 ? "#ccc" : row.avg > 0 ? blue : red
@@ -73,7 +82,7 @@ function App() {
         <CssBaseline />
         <Grid
           container
-          style={{ height: "100vh", width: "100%" }}
+          style={{ marginTop: 64, width: "100%" }}
           alignItems="center"
         >
           <Grid item xs={12}>
@@ -102,13 +111,7 @@ function App() {
                 <Tooltip
                   key={row.state}
                   title={`${row.state} ${
-                    row.avg >= 33 || row.avg <= -33
-                      ? ""
-                      : row.avg === 0
-                      ? `Tie`
-                      : row.avg > 0
-                      ? `Biden +${row.avg}%`
-                      : `Trump +${row.avg * -1}%`
+                    row.avg >= 33 || row.avg <= -33 ? "" : displaySpread(row)
                   }`}
                 >
                   <div
@@ -128,6 +131,7 @@ function App() {
                 <Typography variant="caption" component="div" align="center">
                   Last Updated {moment(data.lastUpdate).format("llll")}
                 </Typography>
+                <Battleground states={states} />
               </Grid>
             </Grid>
           </Grid>
