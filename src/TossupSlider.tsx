@@ -5,7 +5,6 @@ import React from "react"
 
 const useStyles = makeStyles({
   root: {
-    width: 300,
     textAlign: "center",
   },
 })

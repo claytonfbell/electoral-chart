@@ -158,7 +158,7 @@ function App() {
               </Grid>
             </Grid>
             <div className={classes.dividerContainer}>
-              <div className={classes.divider}>&nbsp;hello world</div>
+              <div className={classes.divider}></div>
             </div>
             {states
               .sort((a, b) => b.avg - a.avg)
@@ -197,8 +197,10 @@ function App() {
                 <br />
                 <br />
 
-                <TossupSlider value={tossup} onChange={(v) => setTossup(v)} />
-                <FavorSlider value={favor} onChange={(v) => setFavor(v)} />
+                <div style={{ textAlign: "center" }}>
+                  <TossupSlider value={tossup} onChange={(v) => setTossup(v)} />
+                  <FavorSlider value={favor} onChange={(v) => setFavor(v)} />
+                </div>
 
                 <Battleground states={states} />
               </Grid>
