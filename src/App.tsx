@@ -4,7 +4,6 @@ import {
   fade,
   Grid,
   makeStyles,
-  Paper,
   ThemeProvider,
   Tooltip,
   Typography,
@@ -16,15 +15,7 @@ import React from "react"
 import data from "./data/data.json"
 import FavorSlider from "./FavorSlider"
 
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: `#0077cf`,
-    },
-  },
-})
-
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(4),
   },
@@ -33,10 +24,10 @@ const useStyles = makeStyles({
     borderTop: `1px solid #aaa`,
     borderBottom: `1px solid #aaa`,
     display: "inline-block",
-    minHeight: 128,
+    minHeight: 156,
   },
   divided: { width: "50%", borderRight: `2px dashed #333` },
-})
+}))
 
 type State = {
   state: string
@@ -70,6 +61,14 @@ function App() {
   const bidenVotes = states.reduce((a, b) => a + (b.avg > 0 ? b.votes : 0), 0)
   const trumpVotes = states.reduce((a, b) => a + (b.avg < 0 ? b.votes : 0), 0)
 
+  const theme = createMuiTheme({
+    palette: {
+      primary: {
+        main: `#0077cf`,
+      },
+    },
+  })
+
   return (
     <ThemeProvider theme={theme}>
       <Container>
@@ -80,61 +79,59 @@ function App() {
           alignItems="center"
         >
           <Grid item xs={12}>
-            <Paper className={classes.paper}>
-              <Grid container justify="space-between">
-                <Grid item className={classes.divided}>
-                  <Typography style={{ color: blue }} variant="h4">
-                    Biden {bidenVotes}
-                    {bidenVotes >= 270 && (
-                      <CheckIcon fontSize="inherit" color="inherit" />
-                    )}
-                  </Typography>
-                </Grid>
-                <Grid item>
-                  <Typography style={{ color: red }} variant="h4">
-                    Trump {trumpVotes}
-                    {trumpVotes >= 270 && (
-                      <CheckIcon fontSize="inherit" color="inherit" />
-                    )}
-                  </Typography>
-                </Grid>
+            <Grid container justify="space-between">
+              <Grid item className={classes.divided}>
+                <Typography style={{ color: blue }} variant="h5">
+                  Biden {bidenVotes}
+                  {bidenVotes >= 270 && (
+                    <CheckIcon fontSize="inherit" color="inherit" />
+                  )}
+                </Typography>
               </Grid>
+              <Grid item>
+                <Typography style={{ color: red }} variant="h5">
+                  Trump {trumpVotes}
+                  {trumpVotes >= 270 && (
+                    <CheckIcon fontSize="inherit" color="inherit" />
+                  )}
+                </Typography>
+              </Grid>
+            </Grid>
 
-              {states
-                .sort((a, b) => b.avg - a.avg)
-                .map((row) => (
-                  <Tooltip
-                    key={row.state}
-                    title={`${row.state} ${
-                      row.avg >= 33 || row.avg <= -33
-                        ? ""
-                        : row.avg === 0
-                        ? `Tie`
-                        : row.avg > 0
-                        ? `Biden +${row.avg}%`
-                        : `Trump +${row.avg * -1}%`
-                    }`}
-                  >
-                    <div
-                      className={classes.state}
-                      style={{
-                        backgroundColor: calculateColor(row),
-                        width: `${votePct(row.votes)}%`,
-                      }}
-                    ></div>
-                  </Tooltip>
-                ))}
-              <Grid container justify="center">
-                <Grid item>
-                  <FavorSlider value={favor} onChange={(v) => setFavor(v)} />
-                  <br />
-                  <br />
-                  <Typography variant="caption" component="div" align="center">
-                    Last Updated {moment(data.lastUpdate).format("llll")}
-                  </Typography>
-                </Grid>
+            {states
+              .sort((a, b) => b.avg - a.avg)
+              .map((row) => (
+                <Tooltip
+                  key={row.state}
+                  title={`${row.state} ${
+                    row.avg >= 33 || row.avg <= -33
+                      ? ""
+                      : row.avg === 0
+                      ? `Tie`
+                      : row.avg > 0
+                      ? `Biden +${row.avg}%`
+                      : `Trump +${row.avg * -1}%`
+                  }`}
+                >
+                  <div
+                    className={classes.state}
+                    style={{
+                      backgroundColor: calculateColor(row),
+                      width: `${votePct(row.votes)}%`,
+                    }}
+                  ></div>
+                </Tooltip>
+              ))}
+            <Grid container justify="center">
+              <Grid item>
+                <FavorSlider value={favor} onChange={(v) => setFavor(v)} />
+                <br />
+                <br />
+                <Typography variant="caption" component="div" align="center">
+                  Last Updated {moment(data.lastUpdate).format("llll")}
+                </Typography>
               </Grid>
-            </Paper>
+            </Grid>
           </Grid>
         </Grid>
       </Container>
