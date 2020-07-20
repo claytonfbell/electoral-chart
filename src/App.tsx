@@ -11,6 +11,7 @@ import Typography from "@material-ui/core/Typography/Typography"
 import CheckIcon from "@material-ui/icons/Check"
 import moment from "moment"
 import React from "react"
+import AnimatedCounter from "./AnimatedCounter"
 import Battleground from "./Battleground"
 import data from "./data/data.json"
 import FavorSlider from "./FavorSlider"
@@ -29,12 +30,14 @@ const useStyles = makeStyles((theme) => ({
   },
   dividerContainer: {
     position: "relative",
+    pointerEvents: "none",
   },
   divider: {
     position: "absolute",
     borderRight: `2px dashed #999`,
     minHeight: 96,
     width: `50%`,
+    pointerEvents: "none",
   },
 }))
 
@@ -122,6 +125,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Container>
         <CssBaseline />
+
         <Grid
           container
           style={{ marginTop: 64, width: "100%" }}
@@ -131,7 +135,7 @@ function App() {
             <Grid container justify="space-between">
               <Grid item>
                 <Typography style={{ color: blue }} variant="h5">
-                  Biden {bidenVotes}
+                  Biden <AnimatedCounter value={bidenVotes} />
                   {bidenVotes >= 270 && (
                     <CheckIcon
                       style={{ marginBottom: -4 }}
@@ -143,12 +147,14 @@ function App() {
               </Grid>
               <Hidden xsDown>
                 <Grid item>
-                  <Typography variant="h5">Tossup {tossupVotes}</Typography>
+                  <Typography variant="h5">
+                    Tossup <AnimatedCounter value={tossupVotes} />
+                  </Typography>
                 </Grid>
               </Hidden>
               <Grid item>
                 <Typography style={{ color: red }} variant="h5">
-                  Trump {trumpVotes}
+                  Trump <AnimatedCounter value={trumpVotes} />
                   {trumpVotes >= 270 && (
                     <CheckIcon
                       style={{ marginBottom: -4 }}
