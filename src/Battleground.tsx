@@ -37,8 +37,9 @@ export default function Battleground(props: Props) {
                   .map((row) => (
                     <TableRow key={row.state}>
                       <TableCell>{row.state}</TableCell>
-                      <TableCell>{row.votes} votes</TableCell>
+                      <TableCell align="center">{row.votes} votes</TableCell>
                       <TableCell
+                        align="center"
                         style={{
                           color:
                             row.avg === 0

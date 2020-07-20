@@ -1,4 +1,4 @@
-import { Link } from "@material-ui/core"
+import { Hidden, Link } from "@material-ui/core"
 import Container from "@material-ui/core/Container"
 import CssBaseline from "@material-ui/core/CssBaseline/CssBaseline"
 import Grid from "@material-ui/core/Grid/Grid"
@@ -141,9 +141,11 @@ function App() {
                   )}
                 </Typography>
               </Grid>
-              <Grid item>
-                <Typography variant="h5">Tossup {tossupVotes}</Typography>
-              </Grid>
+              <Hidden xsDown>
+                <Grid item>
+                  <Typography variant="h5">Tossup {tossupVotes}</Typography>
+                </Grid>
+              </Hidden>
               <Grid item>
                 <Typography style={{ color: red }} variant="h5">
                   Trump {trumpVotes}
