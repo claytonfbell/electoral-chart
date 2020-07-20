@@ -11,10 +11,10 @@ import {
 } from "@material-ui/core"
 import Container from "@material-ui/core/Container"
 import axios from "axios"
-import { Button } from "material-ui-bootstrap"
 import moment from "moment"
 import React from "react"
 import data from "./data/data.json"
+import FavorSlider from "./FavorSlider"
 
 const theme = createMuiTheme({
   palette: {
@@ -46,6 +46,7 @@ type State = {
 
 function App() {
   const classes = useStyles()
+
   const votePct = (votes: number) => 100 * ((votes || 0) / 538)
 
   function calculateColor(row: State) {
@@ -69,6 +70,13 @@ function App() {
 
   const [disabled, setDisabled] = React.useState(false)
 
+  // adjust number per favor slider
+  const [favor, setFavor] = React.useState(0)
+  const states = data.states.map((x) => ({
+    ...x,
+    avg: favor * -1 + Math.max(-33, Math.min(33, x.avg)),
+  }))
+
   return (
     <ThemeProvider theme={theme}>
       <Container>
@@ -84,36 +92,30 @@ function App() {
                 <Grid item className={classes.divided}>
                   <Typography variant="h4">
                     Biden{" "}
-                    {data.states.reduce(
-                      (a, b) => a + (b.avg > 0 ? b.votes : 0),
-                      0
-                    )}
+                    {states.reduce((a, b) => a + (b.avg > 0 ? b.votes : 0), 0)}
                   </Typography>
                 </Grid>
                 <Grid item>
                   <Typography variant="h4">
                     Trump{" "}
-                    {data.states.reduce(
-                      (a, b) => a + (b.avg < 0 ? b.votes : 0),
-                      0
-                    )}
+                    {states.reduce((a, b) => a + (b.avg < 0 ? b.votes : 0), 0)}
                   </Typography>
                 </Grid>
               </Grid>
 
-              {data.states
+              {states
                 .sort((a, b) => b.avg - a.avg)
                 .map((row) => (
                   <Tooltip
                     key={row.state}
                     title={`${row.state} ${
-                      row.avg === 100 || row.avg === -100
+                      row.avg >= 33 || row.avg <= -33
                         ? ""
                         : row.avg === 0
                         ? `Tie`
                         : row.avg > 0
-                        ? `Biden ${row.avg}%`
-                        : `Trump ${row.avg * -1}%`
+                        ? `Biden +${row.avg}%`
+                        : `Trump +${row.avg * -1}%`
                     }`}
                   >
                     <div
@@ -125,23 +127,14 @@ function App() {
                     ></div>
                   </Tooltip>
                 ))}
-              <Grid container justify="space-between">
+              <Grid container justify="center">
                 <Grid item>
-                  <Typography variant="caption">
+                  <FavorSlider value={favor} onChange={(v) => setFavor(v)} />
+                  <br />
+                  <br />
+                  <Typography variant="caption" component="span">
                     Last Updated {moment(data.lastUpdate).format("llll")}
                   </Typography>
-                </Grid>
-                <Grid item>
-                  {false && (
-                    <Button
-                      disabled={disabled}
-                      color="primary"
-                      variant="outlined"
-                      onClick={handleUpdate}
-                    >
-                      Update Now
-                    </Button>
-                  )}
                 </Grid>
               </Grid>
             </Paper>
