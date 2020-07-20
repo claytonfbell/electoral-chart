@@ -28,27 +28,33 @@ export default function Battleground(props: Props) {
         </Button>
       </div>
       <Collapse in={open} style={{ marginTop: 12 }}>
-        <TableContainer component={Paper}>
-          <Table size="small">
-            <TableBody>
-              {props.states
-                .filter((x) => x.avg >= -5 && x.avg <= 5)
-                .map((row) => (
-                  <TableRow key={row.state}>
-                    <TableCell>{row.state}</TableCell>
-                    <TableCell
-                      style={{
-                        color:
-                          row.avg === 0 ? undefined : row.avg > 0 ? blue : red,
-                      }}
-                    >
-                      {displaySpread(row)}
-                    </TableCell>
-                  </TableRow>
-                ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+        {open && (
+          <TableContainer component={Paper}>
+            <Table size="small">
+              <TableBody>
+                {props.states
+                  .filter((x) => x.avg >= -5 && x.avg <= 5)
+                  .map((row) => (
+                    <TableRow key={row.state}>
+                      <TableCell>{row.state}</TableCell>
+                      <TableCell
+                        style={{
+                          color:
+                            row.avg === 0
+                              ? undefined
+                              : row.avg > 0
+                              ? blue
+                              : red,
+                        }}
+                      >
+                        {displaySpread(row)}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        )}
       </Collapse>
     </>
   )

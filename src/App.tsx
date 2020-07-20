@@ -1,3 +1,4 @@
+import { Link } from "@material-ui/core"
 import Container from "@material-ui/core/Container"
 import CssBaseline from "@material-ui/core/CssBaseline/CssBaseline"
 import Grid from "@material-ui/core/Grid/Grid"
@@ -13,6 +14,7 @@ import React from "react"
 import Battleground from "./Battleground"
 import data from "./data/data.json"
 import FavorSlider from "./FavorSlider"
+import TossupSlider from "./TossupSlider"
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -25,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
     display: "inline-block",
     minHeight: 96,
   },
-  divided: { width: "50%", borderRight: `2px dashed #333` },
 }))
 
 export const blue = `#0077cf`
@@ -48,25 +49,57 @@ export type State = {
 function App() {
   const classes = useStyles()
 
-  const votePct = (votes: number) => 100 * ((votes || 0) / 538)
+  const [tossup, setTossup] = React.useState(0)
+  const votePct = React.useCallback(
+    (votes: number) => 100 * ((votes || 0) / 538),
+    []
+  )
 
-  function calculateColor(row: State) {
-    let color = row.avg === 0 ? "#ccc" : row.avg > 0 ? blue : red
+  const calculateColor = React.useCallback(
+    (row: State) => {
+      let color =
+        row.avg >= -tossup && row.avg <= tossup
+          ? "#ccc"
+          : row.avg > 0
+          ? blue
+          : red
 
-    const spread = Math.min(33, row.avg > 0 ? row.avg : row.avg * -1)
-    color = fade(color, spread / 33)
-    return color
-  }
+      const spread = Math.min(33, row.avg > 0 ? row.avg : row.avg * -1)
+      color = fade(color, spread / 33)
+      return color
+    },
+    [tossup]
+  )
 
   // adjust number per favor slider
   const [favor, setFavor] = React.useState(0)
-  const states = data.states.map((x) => ({
-    ...x,
-    avg: favor * -1 + Math.max(-33, Math.min(33, x.avg)),
-  }))
+  const states = React.useMemo(
+    () =>
+      data.states.map((x) => ({
+        ...x,
+        avg: favor * -1 + Math.max(-33, Math.min(33, x.avg)),
+      })),
+    [favor]
+  )
 
-  const bidenVotes = states.reduce((a, b) => a + (b.avg > 0 ? b.votes : 0), 0)
-  const trumpVotes = states.reduce((a, b) => a + (b.avg < 0 ? b.votes : 0), 0)
+  const bidenVotes = React.useMemo(
+    () => states.reduce((a, b) => a + (b.avg > tossup ? b.votes : 0), 0),
+    [states, tossup]
+  )
+
+  const trumpVotes = React.useMemo(
+    () => states.reduce((a, b) => a + (b.avg < -tossup ? b.votes : 0), 0),
+    [states, tossup]
+  )
+
+  const tossupVotes = React.useMemo(
+    () =>
+      states.reduce(
+        (a, b) => a + (b.avg >= -tossup && b.avg <= tossup ? b.votes : 0),
+        0
+      ),
+    [states, tossup]
+  )
 
   const theme = createMuiTheme({
     palette: {
@@ -87,19 +120,30 @@ function App() {
         >
           <Grid item xs={12}>
             <Grid container justify="space-between">
-              <Grid item className={classes.divided}>
+              <Grid item>
                 <Typography style={{ color: blue }} variant="h5">
                   Biden {bidenVotes}
                   {bidenVotes >= 270 && (
-                    <CheckIcon fontSize="inherit" color="inherit" />
+                    <CheckIcon
+                      style={{ marginBottom: -4 }}
+                      fontSize="inherit"
+                      color="inherit"
+                    />
                   )}
                 </Typography>
+              </Grid>
+              <Grid item>
+                <Typography variant="h5">Tossup {tossupVotes}</Typography>
               </Grid>
               <Grid item>
                 <Typography style={{ color: red }} variant="h5">
                   Trump {trumpVotes}
                   {trumpVotes >= 270 && (
-                    <CheckIcon fontSize="inherit" color="inherit" />
+                    <CheckIcon
+                      style={{ marginBottom: -4 }}
+                      fontSize="inherit"
+                      color="inherit"
+                    />
                   )}
                 </Typography>
               </Grid>
@@ -125,12 +169,25 @@ function App() {
               ))}
             <Grid container justify="center">
               <Grid item>
-                <FavorSlider value={favor} onChange={(v) => setFavor(v)} />
-                <br />
                 <br />
                 <Typography variant="caption" component="div" align="center">
                   Last Updated {moment(data.lastUpdate).format("llll")}
                 </Typography>
+                <Typography variant="caption" component="div" align="center">
+                  Polling averages are fetched daily from{" "}
+                  <Link
+                    href="https://www.realclearpolitics.com/epolls/2020/president/2020_elections_electoral_college_map.html"
+                    target="rcp"
+                  >
+                    realclearpolitics.com
+                  </Link>
+                </Typography>
+                <br />
+                <br />
+
+                <TossupSlider value={tossup} onChange={(v) => setTossup(v)} />
+                <FavorSlider value={favor} onChange={(v) => setFavor(v)} />
+
                 <Battleground states={states} />
               </Grid>
             </Grid>

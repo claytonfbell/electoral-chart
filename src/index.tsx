@@ -1,18 +1,24 @@
 import { DarkModeProvider } from "material-ui-pack"
 import React from "react"
-import ReactDOM from "react-dom"
+import { hydrate, render } from "react-dom"
 import App from "./App"
 import "./index.css"
 import * as serviceWorker from "./serviceWorker"
 
-ReactDOM.render(
+const theApp = (
   <React.StrictMode>
     <DarkModeProvider>
       <App />
     </DarkModeProvider>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 )
+
+const rootElement = document.getElementById("root") as HTMLElement
+if (rootElement.hasChildNodes()) {
+  hydrate(theApp, rootElement)
+} else {
+  render(theApp, rootElement)
+}
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
