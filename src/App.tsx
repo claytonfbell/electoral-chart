@@ -10,7 +10,6 @@ import {
   Typography,
 } from "@material-ui/core"
 import Container from "@material-ui/core/Container"
-import axios from "axios"
 import moment from "moment"
 import React from "react"
 import data from "./data/data.json"
@@ -58,17 +57,6 @@ function App() {
     color = fade(color, spread / 33)
     return color
   }
-
-  function handleUpdate() {
-    setDisabled(true)
-    axios
-      .post("https://api.netlify.com/build_hooks/5f14d84d09fd44852be21758")
-      .then((resp) => {
-        console.log(resp)
-      })
-  }
-
-  const [disabled, setDisabled] = React.useState(false)
 
   // adjust number per favor slider
   const [favor, setFavor] = React.useState(0)
