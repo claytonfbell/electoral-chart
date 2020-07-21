@@ -1,6 +1,10 @@
 const scrapeIt = require("scrape-it")
 const fs = require("fs")
 const moment = require("moment")
+const countryRegionData = require("country-region-data")
+const axios = require("axios")
+
+console.log(countryRegionData)
 
 // Promise interface
 async function init() {
@@ -60,8 +64,8 @@ async function init() {
     console.log(`${state} ${rcpAvg}`)
     pollNumbers.push({
       state: state.toUpperCase(),
-      avg: rcpAvg,
-      lastUpdate: moment().toISOString(),
+      rcpAvg,
+      rcpUpdatedAt: moment().toISOString(),
     })
   }
   pollNumbers = pollNumbers.filter((x) => x.avg !== null)
@@ -72,8 +76,8 @@ async function init() {
     if (foundIndex !== -1) {
       data.states[foundIndex] = {
         ...data.states[foundIndex],
-        avg: x.avg,
-        lastUpdate: x.lastUpdate,
+        rcpAvg: x.rcpAvg !== null ? x.rcpAvg : undefined,
+        rcpUpdatedAt: x.rcpUpdatedAt,
       }
     }
     // add new state
@@ -90,6 +94,45 @@ async function init() {
     }
     return 0
   })
+  data.states = data.states.map((x) => {
+    const region = countryRegionData
+      .find((y) => y.countryShortCode === "US")
+      .regions.find((y) => y.shortCode === x.state)
+    const { avg, lastUpdate, ...z } = x
+    return { ...z, stateName: region.name }
+  })
+
+  // five thirty eight
+  for (let i = 0; i < data.states.length; i++) {
+    if (!data.states[i].skipFte) {
+      const url = `https://projects.fivethirtyeight.com/polls/president-general/${data.states[
+        i
+      ].stateName
+        .toLowerCase()
+        .replace(/ /g, "-")}/polling-average.json`
+      const result = await axios
+        .get(url)
+        .then((resp) => resp.data)
+        .catch(() => {
+          return null
+        })
+      if (result !== null) {
+        const a = result.slice(0, 2)
+        const biden = a.find((x) => x.candidate.indexOf("Biden") !== -1)
+          .pct_trend_adjusted
+
+        const trump = a.find((x) => x.candidate.indexOf("Trump") !== -1)
+          .pct_trend_adjusted
+        const fteAvg = biden - trump
+        data.states[i].fteAvg = Number(fteAvg.toFixed(2))
+        data.states[i].fteUpdatedAt = moment().toISOString()
+      } else {
+        console.log(`Failed ${url}`)
+        data.states[i].skipFte = true
+      }
+    }
+  }
+
   data.lastUpdate = moment().toISOString()
   fs.writeFileSync(`src/data/data.json`, JSON.stringify(data, undefined, 2))
   console.log(data)

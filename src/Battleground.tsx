@@ -9,10 +9,10 @@ import {
 } from "@material-ui/core"
 import Button from "material-ui-bootstrap/dist/Button"
 import React from "react"
-import { blue, displaySpread, red, State } from "./App"
+import { blue, displaySpread, red, RowData } from "./App"
 
 interface Props {
-  states: State[]
+  states: RowData[]
 }
 export default function Battleground(props: Props) {
   const [open, setOpen] = React.useState(false)
@@ -50,7 +50,7 @@ export default function Battleground(props: Props) {
                               : red,
                         }}
                       >
-                        {displaySpread(row)}
+                        {displaySpread(row.avg)}
                       </TableCell>
                     </TableRow>
                   ))}

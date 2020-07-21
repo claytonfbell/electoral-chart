@@ -10,11 +10,12 @@ import Tooltip from "@material-ui/core/Tooltip/Tooltip"
 import Typography from "@material-ui/core/Typography/Typography"
 import CheckIcon from "@material-ui/icons/Check"
 import moment from "moment"
-import React from "react"
+import React, { useMemo } from "react"
 import AnimatedCounter from "./AnimatedCounter"
 import Battleground from "./Battleground"
 import data from "./data/data.json"
 import FavorSlider from "./FavorSlider"
+import SelectAvgType from "./SelectAvgType"
 import TossupSlider from "./TossupSlider"
 
 const useStyles = makeStyles((theme) => ({
@@ -44,39 +45,50 @@ const useStyles = makeStyles((theme) => ({
 export const blue = `#0077cf`
 export const red = `#c82333`
 
-export function displaySpread(row: State) {
-  return row.avg === 0
+export function displaySpread(avg: number) {
+  return avg === 0
     ? `Tie`
-    : row.avg > 0
-    ? `Biden +${row.avg.toFixed(1)}%`
-    : `Trump +${(row.avg * -1).toFixed(1)}%`
+    : avg > 0
+    ? `Biden +${avg.toFixed(1)}%`
+    : `Trump +${(avg * -1).toFixed(1)}%`
 }
 
 export type State = {
   state: string
-  avg: number
+  stateName: string
   votes: number
+  rcpAvg?: number
+  fteAvg?: number
+  isBlue?: boolean
+  fteUpdatedAt?: string
+  rcpUpdatedAt?: string
 }
+
+export type RowData = {
+  state: string
+  stateName: string
+  votes: number
+  avg: number
+}
+
+export type AvgType = "rcpAvg" | "fteAvg"
 
 function App() {
   const classes = useStyles()
 
+  const [avgType, setAvgType] = React.useState<AvgType>("fteAvg")
   const [tossup, setTossup] = React.useState(0)
+
   const votePct = React.useCallback(
     (votes: number) => 100 * ((votes || 0) / 538),
     []
   )
 
   const calculateColor = React.useCallback(
-    (row: State) => {
+    (avg: number) => {
       let color =
-        row.avg >= -tossup && row.avg <= tossup
-          ? "#ccc"
-          : row.avg > 0
-          ? blue
-          : red
-
-      const spread = Math.min(33, row.avg > 0 ? row.avg : row.avg * -1)
+        avg >= -tossup && avg <= tossup ? "#ccc" : avg > 0 ? blue : red
+      const spread = Math.min(33, avg > 0 ? avg : avg * -1)
       color = fade(color, spread / 33)
       return color
     },
@@ -85,13 +97,27 @@ function App() {
 
   // adjust number per favor slider
   const [favor, setFavor] = React.useState(0)
-  const states = React.useMemo(
+  const states: RowData[] = React.useMemo(
     () =>
       data.states.map((x) => ({
-        ...x,
-        avg: favor * -1 + Math.max(-33, Math.min(33, x.avg)),
+        state: x.state,
+        stateName: x.stateName,
+        votes: x.votes,
+        avg:
+          favor * -1 +
+          Math.max(
+            -33,
+            Math.min(
+              33,
+              x[avgType] === undefined
+                ? !x.isBlue
+                  ? -100
+                  : 100
+                : (x[avgType] as number)
+            )
+          ),
       })),
-    [favor]
+    [avgType, favor]
   )
 
   const bidenVotes = React.useMemo(
@@ -113,22 +139,28 @@ function App() {
     [states, tossup]
   )
 
-  const theme = createMuiTheme({
-    palette: {
-      primary: {
-        main: `#0077cf`,
-      },
-    },
-  })
+  const theme = useMemo(
+    () =>
+      createMuiTheme({
+        palette: {
+          primary: {
+            main: blue,
+          },
+          secondary: {
+            main: red,
+          },
+        },
+      }),
+    []
+  )
 
   return (
     <ThemeProvider theme={theme}>
       <Container>
         <CssBaseline />
-
         <Grid
           container
-          style={{ marginTop: 64, width: "100%" }}
+          style={{ marginTop: 24, width: "100%" }}
           alignItems="center"
         >
           <Grid item xs={12}>
@@ -173,14 +205,16 @@ function App() {
               .map((row) => (
                 <Tooltip
                   key={row.state}
-                  title={`${row.state} ${
-                    row.avg >= 33 || row.avg <= -33 ? "" : displaySpread(row)
+                  title={`${row.stateName} - ${
+                    row.avg >= 33 || row.avg <= -33
+                      ? ""
+                      : displaySpread(row.avg)
                   }`}
                 >
                   <div
                     className={classes.state}
                     style={{
-                      backgroundColor: calculateColor(row),
+                      backgroundColor: calculateColor(row.avg),
                       width: `${votePct(row.votes)}%`,
                     }}
                   ></div>
@@ -190,6 +224,11 @@ function App() {
             <Grid container justify="center">
               <Grid item>
                 <div style={{ textAlign: "center" }}>
+                  <SelectAvgType
+                    value={avgType}
+                    onChange={(v) => setAvgType(v)}
+                  />
+
                   <TossupSlider value={tossup} onChange={(v) => setTossup(v)} />
                   <FavorSlider value={favor} onChange={(v) => setFavor(v)} />
                 </div>
@@ -207,7 +246,15 @@ function App() {
                     target="rcp"
                   >
                     realclearpolitics.com
+                  </Link>{" "}
+                  and{" "}
+                  <Link
+                    href="https://projects.fivethirtyeight.com/polls/president-general/"
+                    target="fte"
+                  >
+                    fivethirtyeight.com
                   </Link>
+                  .
                 </Typography>
               </Grid>
             </Grid>
