@@ -60,8 +60,6 @@ export default function Battleground(props: Props) {
         )}
         <br />
         <br />
-        <br />
-        <br />
       </Collapse>
     </>
   )

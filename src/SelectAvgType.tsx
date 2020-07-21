@@ -23,12 +23,13 @@ export default function SelectAvgType(props: Props) {
         value={props.value}
         onChange={handleChange}
       >
-        <Grid container spacing={0}>
+        <Grid container spacing={0} justify="space-between">
           <Grid item>
             <FormControlLabel
               value="fteAvg"
               control={<Radio />}
               label="Five Thirty Eight"
+              labelPlacement="top"
             />
           </Grid>
           <Grid item>
@@ -36,6 +37,7 @@ export default function SelectAvgType(props: Props) {
               value="rcpAvg"
               control={<Radio />}
               label="Real Clear Politics"
+              labelPlacement="top"
             />
           </Grid>
         </Grid>

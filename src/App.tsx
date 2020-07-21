@@ -1,4 +1,4 @@
-import { Hidden, Link } from "@material-ui/core"
+import { Hidden } from "@material-ui/core"
 import Container from "@material-ui/core/Container"
 import CssBaseline from "@material-ui/core/CssBaseline/CssBaseline"
 import Grid from "@material-ui/core/Grid/Grid"
@@ -240,21 +240,7 @@ function App() {
                   Last Updated {moment(data.lastUpdate).format("llll")}
                 </Typography>
                 <Typography variant="caption" component="div" align="center">
-                  Polling averages are fetched daily from{" "}
-                  <Link
-                    href="https://www.realclearpolitics.com/epolls/2020/president/2020_elections_electoral_college_map.html"
-                    target="rcp"
-                  >
-                    realclearpolitics.com
-                  </Link>{" "}
-                  and{" "}
-                  <Link
-                    href="https://projects.fivethirtyeight.com/polls/president-general/"
-                    target="fte"
-                  >
-                    fivethirtyeight.com
-                  </Link>
-                  .
+                  Polling averages are fetched daily
                 </Typography>
               </Grid>
             </Grid>
