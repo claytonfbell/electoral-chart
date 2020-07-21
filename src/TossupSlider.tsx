@@ -21,7 +21,7 @@ export default function TossupSlider(props: Props) {
   const classes = useStyles()
   return (
     <div className={classes.root}>
-      <Typography id="discrete-slider" gutterBottom>
+      <Typography>
         {props.value === 0
           ? "No Tossups"
           : `<= ${props.value.toFixed(1)}% spread is Tossup`}

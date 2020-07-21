@@ -21,7 +21,7 @@ export default function FavorSlider(props: Props) {
   const classes = useStyles()
   return (
     <div className={classes.root}>
-      <Typography id="discrete-slider" gutterBottom>
+      <Typography>
         {props.value === 0
           ? "Margin for Error Slider"
           : props.value < 0

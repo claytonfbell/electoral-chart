@@ -20,11 +20,12 @@ export default function Battleground(props: Props) {
     <>
       <div style={{ textAlign: "center", marginTop: 24 }}>
         <Button
+          fullWidth
           color="primary"
           variant={open ? "contained" : "outlined"}
           onClick={() => setOpen(!open)}
         >
-          States Less then 5% Spread
+          Contested States
         </Button>
       </div>
       <Collapse in={open} style={{ marginTop: 12 }}>
@@ -33,7 +34,7 @@ export default function Battleground(props: Props) {
             <Table size="small">
               <TableBody>
                 {props.states
-                  .filter((x) => x.avg >= -5 && x.avg <= 5)
+                  .filter((x) => x.avg >= -6.5 && x.avg <= 6.5)
                   .map((row) => (
                     <TableRow key={row.state}>
                       <TableCell>{row.state}</TableCell>
@@ -57,6 +58,10 @@ export default function Battleground(props: Props) {
             </Table>
           </TableContainer>
         )}
+        <br />
+        <br />
+        <br />
+        <br />
       </Collapse>
     </>
   )

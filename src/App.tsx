@@ -147,7 +147,7 @@ function App() {
               </Grid>
               <Hidden xsDown>
                 <Grid item>
-                  <Typography variant="h5">
+                  <Typography style={{ color: "#666" }} variant="h5">
                     Tossup <AnimatedCounter value={tossupVotes} />
                   </Typography>
                 </Grid>
@@ -189,7 +189,14 @@ function App() {
 
             <Grid container justify="center">
               <Grid item>
+                <div style={{ textAlign: "center" }}>
+                  <TossupSlider value={tossup} onChange={(v) => setTossup(v)} />
+                  <FavorSlider value={favor} onChange={(v) => setFavor(v)} />
+                </div>
+
+                <Battleground states={states} />
                 <br />
+
                 <Typography variant="caption" component="div" align="center">
                   Last Updated {moment(data.lastUpdate).format("llll")}
                 </Typography>
@@ -202,15 +209,6 @@ function App() {
                     realclearpolitics.com
                   </Link>
                 </Typography>
-                <br />
-                <br />
-
-                <div style={{ textAlign: "center" }}>
-                  <TossupSlider value={tossup} onChange={(v) => setTossup(v)} />
-                  <FavorSlider value={favor} onChange={(v) => setFavor(v)} />
-                </div>
-
-                <Battleground states={states} />
               </Grid>
             </Grid>
           </Grid>
