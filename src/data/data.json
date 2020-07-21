@@ -163,7 +163,8 @@
       "rcpAvg": 31,
       "stateName": "Massachusetts",
       "skipFte": true,
-      "rcpUpdatedAt": "2020-07-21T07:49:29.190Z"
+      "rcpUpdatedAt": "2020-07-21T07:49:29.190Z",
+      "isBlue": true
     },
     {
       "state": "MD",
