@@ -1,12 +1,10 @@
-import {
-  Collapse,
-  Paper,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableRow,
-} from "@material-ui/core"
+import Collapse from "@material-ui/core/Collapse/Collapse"
+import Paper from "@material-ui/core/Paper/Paper"
+import Table from "@material-ui/core/Table/Table"
+import TableBody from "@material-ui/core/TableBody/TableBody"
+import TableCell from "@material-ui/core/TableCell/TableCell"
+import TableContainer from "@material-ui/core/TableContainer/TableContainer"
+import TableRow from "@material-ui/core/TableRow/TableRow"
 import Button from "material-ui-bootstrap/dist/Button"
 import React from "react"
 import { blue, displaySpread, red, RowData } from "./App"

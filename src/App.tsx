@@ -1,7 +1,7 @@
-import { Hidden } from "@material-ui/core"
 import Container from "@material-ui/core/Container"
 import CssBaseline from "@material-ui/core/CssBaseline/CssBaseline"
 import Grid from "@material-ui/core/Grid/Grid"
+import Hidden from "@material-ui/core/Hidden/Hidden"
 import { ThemeProvider } from "@material-ui/core/styles"
 import { fade } from "@material-ui/core/styles/colorManipulator"
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme"
@@ -10,7 +10,7 @@ import Tooltip from "@material-ui/core/Tooltip/Tooltip"
 import Typography from "@material-ui/core/Typography/Typography"
 import CheckIcon from "@material-ui/icons/Check"
 import moment from "moment"
-import React, { useMemo } from "react"
+import React from "react"
 import AnimatedCounter from "./AnimatedCounter"
 import Battleground from "./Battleground"
 import data from "./data/data.json"
@@ -139,7 +139,7 @@ function App() {
     [states, tossup]
   )
 
-  const theme = useMemo(
+  const theme = React.useMemo(
     () =>
       createMuiTheme({
         palette: {

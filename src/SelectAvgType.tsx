@@ -1,5 +1,5 @@
-import { Grid } from "@material-ui/core"
 import FormControlLabel from "@material-ui/core/FormControlLabel"
+import Grid from "@material-ui/core/Grid/Grid"
 import Radio from "@material-ui/core/Radio"
 import RadioGroup from "@material-ui/core/RadioGroup"
 import React from "react"

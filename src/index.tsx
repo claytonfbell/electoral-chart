@@ -1,4 +1,3 @@
-import { DarkModeProvider } from "material-ui-pack"
 import React from "react"
 import { hydrate, render } from "react-dom"
 import App from "./App"
@@ -7,9 +6,7 @@ import * as serviceWorker from "./serviceWorker"
 
 const theApp = (
   <React.StrictMode>
-    <DarkModeProvider>
-      <App />
-    </DarkModeProvider>
+    <App />
   </React.StrictMode>
 )
 
