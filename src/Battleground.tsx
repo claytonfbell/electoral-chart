@@ -9,6 +9,8 @@ import Button from "material-ui-bootstrap/dist/Button"
 import React from "react"
 import { blue, displaySpread, red, RowData } from "./App"
 
+const threshold = 10
+
 interface Props {
   states: RowData[]
 }
@@ -32,7 +34,7 @@ export default function Battleground(props: Props) {
             <Table size="small">
               <TableBody>
                 {props.states
-                  .filter((x) => x.avg >= -6.5 && x.avg <= 6.5)
+                  .filter((x) => x.avg >= -threshold && x.avg <= threshold)
                   .map((row) => (
                     <TableRow key={row.state}>
                       <TableCell>{row.state}</TableCell>

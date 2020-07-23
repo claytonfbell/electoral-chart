@@ -44,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const blue = `#0077cf`
 export const red = `#c82333`
+const capUnknown = 29
 
 export function displaySpread(avg: number) {
   return avg === 0
@@ -84,15 +85,22 @@ function App() {
     []
   )
 
+  const calculateFade = React.useCallback(
+    (avg: number) => {
+      const spread = Math.min(capUnknown, (avg > 0 ? avg : avg * -1) - tossup)
+      return spread / capUnknown
+    },
+    [tossup]
+  )
+
   const calculateColor = React.useCallback(
     (avg: number) => {
       let color =
         avg >= -tossup && avg <= tossup ? "#ccc" : avg > 0 ? blue : red
-      const spread = Math.min(33, avg > 0 ? avg : avg * -1)
-      color = fade(color, spread / 33)
+      color = fade(color, calculateFade(avg))
       return color
     },
-    [tossup]
+    [calculateFade, tossup]
   )
 
   // adjust number per favor slider
@@ -106,9 +114,9 @@ function App() {
         avg:
           favor * -1 +
           Math.max(
-            -33,
+            -capUnknown,
             Math.min(
-              33,
+              capUnknown,
               x[avgType] === undefined
                 ? !x.isBlue
                   ? -100
@@ -200,13 +208,14 @@ function App() {
             <div className={classes.dividerContainer}>
               <div className={classes.divider}></div>
             </div>
+
             {states
               .sort((a, b) => b.avg - a.avg)
               .map((row) => (
                 <Tooltip
                   key={row.state}
                   title={`${row.stateName} - ${
-                    row.avg >= 33 || row.avg <= -33
+                    row.avg >= capUnknown || row.avg <= -capUnknown
                       ? ""
                       : displaySpread(row.avg)
                   }`}
