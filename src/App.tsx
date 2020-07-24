@@ -9,6 +9,8 @@ import makeStyles from "@material-ui/core/styles/makeStyles"
 import Tooltip from "@material-ui/core/Tooltip/Tooltip"
 import Typography from "@material-ui/core/Typography/Typography"
 import CheckIcon from "@material-ui/icons/Check"
+import GitHubIcon from "@material-ui/icons/GitHub"
+import Button from "material-ui-bootstrap/dist/Button"
 import moment from "moment"
 import React from "react"
 import AnimatedCounter from "./AnimatedCounter"
@@ -250,6 +252,17 @@ function App() {
                 </Typography>
                 <Typography variant="caption" component="div" align="center">
                   Polling averages are fetched daily
+                </Typography>
+                <Typography variant="caption" component="div" align="center">
+                  Source code at{" "}
+                  <Button
+                    startIcon={<GitHubIcon />}
+                    color="primary"
+                    target="github"
+                    href="https://github.com/claytonfbell/electoral-chart"
+                  >
+                    GitHub
+                  </Button>
                 </Typography>
               </Grid>
             </Grid>
