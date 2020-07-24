@@ -4,4 +4,4 @@
 
 Data is scraped at build time, site is pre-rendered react on netlify.com.
 
-![animated screenshot](./public/preview.gif)
+![animated screenshot](./public/electoral-live-preview.gif)
