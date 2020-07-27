@@ -6,7 +6,6 @@ import { ThemeProvider } from "@material-ui/core/styles"
 import { fade } from "@material-ui/core/styles/colorManipulator"
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme"
 import makeStyles from "@material-ui/core/styles/makeStyles"
-import Tooltip from "@material-ui/core/Tooltip/Tooltip"
 import Typography from "@material-ui/core/Typography/Typography"
 import CheckIcon from "@material-ui/icons/Check"
 import GitHubIcon from "@material-ui/icons/GitHub"
@@ -15,6 +14,7 @@ import moment from "moment"
 import React from "react"
 import AnimatedCounter from "./AnimatedCounter"
 import Battleground from "./Battleground"
+import CustomToolTip from "./CustomToolTip"
 import data from "./data/data.json"
 import FavorSlider from "./FavorSlider"
 import SelectAvgType from "./SelectAvgType"
@@ -87,12 +87,22 @@ function App() {
     []
   )
 
-  const calculateFade = React.useCallback(
+  const adjustAvgWithTossup = React.useCallback(
     (avg: number) => {
-      const spread = Math.min(capUnknown, (avg > 0 ? avg : avg * -1) - tossup)
-      return spread / capUnknown
+      return avg - (avg > 0 ? Math.min(avg, tossup) : Math.max(avg, -tossup))
     },
     [tossup]
+  )
+
+  const calculateFade = React.useCallback(
+    (avg: number) => {
+      const spread = Math.min(
+        capUnknown,
+        adjustAvgWithTossup(avg > 0 ? avg : -avg)
+      )
+      return Math.max(0.1, spread / capUnknown)
+    },
+    [adjustAvgWithTossup]
   )
 
   const calculateColor = React.useCallback(
@@ -214,12 +224,12 @@ function App() {
             {states
               .sort((a, b) => b.avg - a.avg)
               .map((row) => (
-                <Tooltip
+                <CustomToolTip
                   key={row.state}
-                  title={`${row.stateName} - ${
+                  title={`${row.stateName}${
                     row.avg >= capUnknown || row.avg <= -capUnknown
                       ? ""
-                      : displaySpread(row.avg)
+                      : ` - ${displaySpread(row.avg)}`
                   }`}
                 >
                   <div
@@ -229,7 +239,7 @@ function App() {
                       width: `${votePct(row.votes)}%`,
                     }}
                   ></div>
-                </Tooltip>
+                </CustomToolTip>
               ))}
 
             <Grid container justify="center">
