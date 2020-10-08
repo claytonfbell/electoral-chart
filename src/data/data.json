@@ -6,18 +6,18 @@
       "stateName": "Alaska",
       "isBlue": false,
       "skipFte": false,
-      "rcpUpdatedAt": "2020-09-24T19:25:53.863Z",
-      "fteAvg": -7.04,
-      "fteUpdatedAt": "2020-09-24T19:25:57.316Z"
+      "rcpUpdatedAt": "2020-10-08T00:40:05.047Z",
+      "fteAvg": -4.72,
+      "fteUpdatedAt": "2020-10-08T00:40:05.749Z"
     },
     {
       "state": "AL",
       "votes": 9,
       "stateName": "Alabama",
-      "fteAvg": -14.96,
+      "fteAvg": -18.13,
       "isBlue": false,
-      "fteUpdatedAt": "2020-09-24T19:25:57.844Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:56.421Z"
+      "fteUpdatedAt": "2020-10-08T00:40:05.790Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:05.561Z"
     },
     {
       "state": "AR",
@@ -25,36 +25,36 @@
       "stateName": "Arkansas",
       "isBlue": false,
       "skipFte": false,
-      "rcpUpdatedAt": "2020-09-24T19:25:54.674Z",
-      "fteAvg": -17.84,
-      "fteUpdatedAt": "2020-09-24T19:25:58.212Z"
+      "rcpUpdatedAt": "2020-10-08T00:40:05.249Z",
+      "fteAvg": -15.91,
+      "fteUpdatedAt": "2020-10-08T00:40:05.824Z"
     },
     {
       "state": "AZ",
       "votes": 11,
-      "rcpAvg": 3.2,
+      "rcpAvg": 3.1,
       "stateName": "Arizona",
-      "fteAvg": 3.87,
-      "fteUpdatedAt": "2020-09-24T19:25:58.481Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:51.104Z"
+      "fteAvg": 4.38,
+      "fteUpdatedAt": "2020-10-08T00:40:05.867Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:04.495Z"
     },
     {
       "state": "CA",
       "votes": 55,
-      "rcpAvg": 30,
+      "rcpAvg": 31.7,
       "stateName": "California",
-      "fteAvg": 29.23,
-      "fteUpdatedAt": "2020-09-24T19:25:58.908Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:55.760Z"
+      "fteAvg": 31.03,
+      "fteUpdatedAt": "2020-10-08T00:40:05.912Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:05.462Z"
     },
     {
       "state": "CO",
       "votes": 9,
       "stateName": "Colorado",
-      "fteAvg": 10.13,
+      "fteAvg": 12.76,
       "isBlue": true,
-      "fteUpdatedAt": "2020-09-24T19:25:59.267Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:47.569Z"
+      "fteUpdatedAt": "2020-10-08T00:40:05.973Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:03.795Z"
     },
     {
       "state": "CT",
@@ -62,9 +62,9 @@
       "stateName": "Connecticut",
       "isBlue": true,
       "skipFte": false,
-      "rcpUpdatedAt": "2020-09-24T19:25:48.512Z",
-      "fteAvg": 20.75,
-      "fteUpdatedAt": "2020-09-24T19:25:59.579Z"
+      "rcpUpdatedAt": "2020-10-08T00:40:04.034Z",
+      "fteAvg": 24.04,
+      "fteUpdatedAt": "2020-10-08T00:40:06.033Z"
     },
     {
       "state": "DC",
@@ -79,27 +79,27 @@
       "stateName": "Delaware",
       "isBlue": true,
       "skipFte": false,
-      "rcpUpdatedAt": "2020-09-24T19:25:55.118Z",
-      "fteAvg": 24.14,
-      "fteUpdatedAt": "2020-09-24T19:26:00.318Z"
+      "rcpUpdatedAt": "2020-10-08T00:40:05.353Z",
+      "fteAvg": 24.37,
+      "fteUpdatedAt": "2020-10-08T00:40:06.251Z"
     },
     {
       "state": "FL",
       "votes": 29,
-      "rcpAvg": 1.3,
+      "rcpAvg": 4.5,
       "stateName": "Florida",
-      "fteAvg": 1.62,
-      "fteUpdatedAt": "2020-09-24T19:26:00.629Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:49.828Z"
+      "fteAvg": 4.62,
+      "fteUpdatedAt": "2020-10-08T00:40:06.297Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:04.342Z"
     },
     {
       "state": "GA",
       "votes": 16,
-      "rcpAvg": -1,
+      "rcpAvg": 0.3,
       "stateName": "Georgia",
-      "fteAvg": -1.07,
-      "fteUpdatedAt": "2020-09-24T19:26:01.190Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:52.102Z"
+      "fteAvg": 1.05,
+      "fteUpdatedAt": "2020-10-08T00:40:06.338Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:04.826Z"
     },
     {
       "state": "HI",
@@ -107,17 +107,17 @@
       "stateName": "Hawaii",
       "isBlue": true,
       "skipFte": false,
-      "fteAvg": 26.31,
-      "fteUpdatedAt": "2020-09-24T19:26:01.401Z"
+      "fteAvg": 30.06,
+      "fteUpdatedAt": "2020-10-08T00:40:06.372Z"
     },
     {
       "state": "IA",
       "votes": 6,
-      "rcpAvg": 0,
+      "rcpAvg": 1.4,
       "stateName": "Iowa",
-      "fteAvg": -0.78,
-      "fteUpdatedAt": "2020-09-24T19:26:01.735Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:49.982Z"
+      "fteAvg": 0.91,
+      "fteUpdatedAt": "2020-10-08T00:40:06.417Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:04.294Z"
     },
     {
       "state": "ID",
@@ -125,16 +125,18 @@
       "stateName": "Idaho",
       "isBlue": false,
       "skipFte": false,
-      "fteAvg": -23.9,
-      "fteUpdatedAt": "2020-09-24T19:26:02.019Z"
+      "fteAvg": -24.11,
+      "fteUpdatedAt": "2020-10-08T00:40:06.445Z"
     },
     {
       "state": "IL",
       "votes": 20,
       "stateName": "Illinois",
       "isBlue": true,
-      "skipFte": true,
-      "rcpUpdatedAt": "2020-09-24T19:25:46.879Z"
+      "skipFte": false,
+      "rcpUpdatedAt": "2020-10-08T00:40:03.588Z",
+      "fteAvg": 17.68,
+      "fteUpdatedAt": "2020-10-08T00:40:06.674Z"
     },
     {
       "state": "IN",
@@ -142,27 +144,27 @@
       "stateName": "Indiana",
       "isBlue": false,
       "skipFte": false,
-      "rcpUpdatedAt": "2020-09-24T19:25:52.831Z",
-      "fteAvg": -14.43,
-      "fteUpdatedAt": "2020-09-24T19:26:02.681Z"
+      "rcpUpdatedAt": "2020-10-08T00:40:04.905Z",
+      "fteAvg": -11.97,
+      "fteUpdatedAt": "2020-10-08T00:40:06.720Z"
     },
     {
       "state": "KS",
       "votes": 6,
       "stateName": "Kansas",
-      "fteAvg": -8.9,
+      "fteAvg": -7.09,
       "isBlue": false,
-      "fteUpdatedAt": "2020-09-24T19:26:03.099Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:56.810Z"
+      "fteUpdatedAt": "2020-10-08T00:40:06.803Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:05.616Z"
     },
     {
       "state": "KY",
       "votes": 8,
       "stateName": "Kentucky",
-      "fteAvg": -18.83,
+      "fteAvg": -18.26,
       "isBlue": false,
-      "fteUpdatedAt": "2020-09-24T19:26:03.334Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:57.016Z"
+      "fteUpdatedAt": "2020-10-08T00:40:06.837Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:05.662Z"
     },
     {
       "state": "LA",
@@ -170,9 +172,9 @@
       "stateName": "Louisiana",
       "isBlue": false,
       "skipFte": false,
-      "rcpUpdatedAt": "2020-09-24T19:25:54.011Z",
-      "fteAvg": -10.68,
-      "fteUpdatedAt": "2020-09-24T19:26:03.598Z"
+      "rcpUpdatedAt": "2020-10-08T00:40:05.097Z",
+      "fteAvg": -14.03,
+      "fteUpdatedAt": "2020-10-08T00:40:06.867Z"
     },
     {
       "state": "MA",
@@ -180,10 +182,10 @@
       "rcpAvg": 35.7,
       "stateName": "Massachusetts",
       "skipFte": false,
-      "rcpUpdatedAt": "2020-09-24T19:25:54.848Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:05.301Z",
       "isBlue": true,
-      "fteAvg": 34.13,
-      "fteUpdatedAt": "2020-09-24T19:26:03.843Z"
+      "fteAvg": 36.66,
+      "fteUpdatedAt": "2020-10-08T00:40:06.905Z"
     },
     {
       "state": "MD",
@@ -191,8 +193,8 @@
       "stateName": "Maryland",
       "isBlue": true,
       "skipFte": false,
-      "fteAvg": 29.34,
-      "fteUpdatedAt": "2020-09-24T19:26:04.398Z"
+      "fteAvg": 31.65,
+      "fteUpdatedAt": "2020-10-08T00:40:06.945Z"
     },
     {
       "state": "ME",
@@ -200,19 +202,19 @@
       "stateName": "Maine",
       "isBlue": true,
       "skipFte": false,
-      "rcpUpdatedAt": "2020-09-24T19:25:47.332Z",
-      "rcpAvg": 13.5,
-      "fteAvg": 13.88,
-      "fteUpdatedAt": "2020-09-24T19:26:04.742Z"
+      "rcpUpdatedAt": "2020-10-08T00:40:03.758Z",
+      "rcpAvg": 12.8,
+      "fteAvg": 14.87,
+      "fteUpdatedAt": "2020-10-08T00:40:06.987Z"
     },
     {
       "state": "MI",
       "votes": 16,
-      "rcpAvg": 5.2,
+      "rcpAvg": 6.2,
       "stateName": "Michigan",
-      "fteAvg": 7.03,
-      "fteUpdatedAt": "2020-09-24T19:26:05.169Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:50.959Z"
+      "fteAvg": 7.7,
+      "fteUpdatedAt": "2020-10-08T00:40:07.029Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:04.563Z"
     },
     {
       "state": "MN",
@@ -220,19 +222,19 @@
       "stateName": "Minnesota",
       "isBlue": true,
       "skipFte": false,
-      "rcpUpdatedAt": "2020-09-24T19:25:47.827Z",
-      "rcpAvg": 10.2,
-      "fteAvg": 9.15,
-      "fteUpdatedAt": "2020-09-24T19:26:05.445Z"
+      "rcpUpdatedAt": "2020-10-08T00:40:03.905Z",
+      "rcpAvg": 9.4,
+      "fteAvg": 8.76,
+      "fteUpdatedAt": "2020-10-08T00:40:07.067Z"
     },
     {
       "state": "MO",
       "votes": 10,
-      "rcpAvg": -8,
+      "rcpAvg": -7,
       "stateName": "Missouri",
-      "fteAvg": -6.7,
-      "fteUpdatedAt": "2020-09-24T19:26:06.244Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:52.568Z"
+      "fteAvg": -5.82,
+      "fteUpdatedAt": "2020-10-08T00:40:07.110Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:04.871Z"
     },
     {
       "state": "MS",
@@ -240,27 +242,28 @@
       "stateName": "Mississippi",
       "isBlue": false,
       "skipFte": false,
-      "rcpUpdatedAt": "2020-09-24T19:25:54.171Z",
-      "fteAvg": -11.7,
-      "fteUpdatedAt": "2020-09-24T19:26:06.956Z"
+      "rcpUpdatedAt": "2020-10-08T00:40:05.149Z",
+      "fteAvg": -12.27,
+      "fteUpdatedAt": "2020-10-08T00:40:07.155Z"
     },
     {
       "state": "MT",
       "votes": 3,
       "stateName": "Montana",
-      "fteAvg": -8.07,
+      "fteAvg": -7.88,
       "isBlue": false,
-      "fteUpdatedAt": "2020-09-24T19:26:07.338Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:53.322Z"
+      "fteUpdatedAt": "2020-10-08T00:40:07.201Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:04.955Z",
+      "rcpAvg": -9.7
     },
     {
       "state": "NC",
       "votes": 15,
-      "rcpAvg": 0.8,
+      "rcpAvg": 1.4,
       "stateName": "North Carolina",
-      "fteAvg": 1.18,
-      "fteUpdatedAt": "2020-09-24T19:26:07.657Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:51.914Z"
+      "fteAvg": 2.52,
+      "fteUpdatedAt": "2020-10-08T00:40:07.246Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:04.780Z"
     },
     {
       "state": "ND",
@@ -268,8 +271,8 @@
       "stateName": "North Dakota",
       "isBlue": false,
       "skipFte": false,
-      "fteAvg": -22.04,
-      "fteUpdatedAt": "2020-09-24T19:26:08.309Z"
+      "fteAvg": -22.08,
+      "fteUpdatedAt": "2020-10-08T00:40:07.287Z"
     },
     {
       "state": "NE",
@@ -281,20 +284,20 @@
     {
       "state": "NH",
       "votes": 4,
-      "rcpAvg": 5.5,
+      "rcpAvg": 8.4,
       "stateName": "New Hampshire",
-      "fteAvg": 6.83,
-      "fteUpdatedAt": "2020-09-24T19:26:08.984Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:49.651Z"
+      "fteAvg": 9.81,
+      "fteUpdatedAt": "2020-10-08T00:40:07.492Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:03.684Z"
     },
     {
       "state": "NJ",
       "votes": 14,
       "rcpAvg": 18.8,
       "stateName": "New Jersey",
-      "fteAvg": 19.16,
-      "fteUpdatedAt": "2020-09-24T19:26:09.366Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:46.732Z"
+      "fteAvg": 20.4,
+      "fteUpdatedAt": "2020-10-08T00:40:07.535Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:03.530Z"
     },
     {
       "state": "NM",
@@ -303,36 +306,36 @@
       "stateName": "New Mexico",
       "isBlue": true,
       "skipFte": false,
-      "rcpUpdatedAt": "2020-09-24T19:25:47.978Z",
-      "fteAvg": 12.82,
-      "fteUpdatedAt": "2020-09-24T19:26:09.754Z"
+      "rcpUpdatedAt": "2020-10-08T00:40:03.947Z",
+      "fteAvg": 13.5,
+      "fteUpdatedAt": "2020-10-08T00:40:07.578Z"
     },
     {
       "state": "NV",
       "votes": 6,
       "rcpAvg": 6,
       "stateName": "Nevada",
-      "fteAvg": 5.75,
-      "fteUpdatedAt": "2020-09-24T19:26:10.093Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:50.171Z"
+      "fteAvg": 6.59,
+      "fteUpdatedAt": "2020-10-08T00:40:07.630Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:04.387Z"
     },
     {
       "state": "NY",
       "votes": 29,
-      "rcpAvg": 26.3,
+      "rcpAvg": 28.7,
       "stateName": "New York",
-      "fteAvg": 26.84,
-      "fteUpdatedAt": "2020-09-24T19:26:10.455Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:55.335Z"
+      "fteAvg": 30.26,
+      "fteUpdatedAt": "2020-10-08T00:40:07.675Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:05.403Z"
     },
     {
       "state": "OH",
       "votes": 18,
-      "rcpAvg": 1.3,
+      "rcpAvg": 0.6,
       "stateName": "Ohio",
-      "fteAvg": -0.31,
-      "fteUpdatedAt": "2020-09-24T19:26:10.845Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:51.234Z"
+      "fteAvg": 0.68,
+      "fteUpdatedAt": "2020-10-08T00:40:07.758Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:04.730Z"
     },
     {
       "state": "OK",
@@ -340,8 +343,8 @@
       "stateName": "Oklahoma",
       "isBlue": false,
       "skipFte": false,
-      "fteAvg": -23.63,
-      "fteUpdatedAt": "2020-09-24T19:26:11.440Z"
+      "fteAvg": -23.83,
+      "fteUpdatedAt": "2020-10-08T00:40:07.798Z"
     },
     {
       "state": "OR",
@@ -349,18 +352,18 @@
       "stateName": "Oregon",
       "isBlue": true,
       "skipFte": false,
-      "rcpUpdatedAt": "2020-09-24T19:25:48.854Z",
-      "fteAvg": 16.7,
-      "fteUpdatedAt": "2020-09-24T19:26:11.626Z"
+      "rcpUpdatedAt": "2020-10-08T00:40:04.078Z",
+      "fteAvg": 18.7,
+      "fteUpdatedAt": "2020-10-08T00:40:07.823Z"
     },
     {
       "state": "PA",
       "votes": 20,
-      "rcpAvg": 4.7,
+      "rcpAvg": 7.1,
       "stateName": "Pennsylvania",
-      "fteAvg": 4.62,
-      "fteUpdatedAt": "2020-09-24T19:26:11.996Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:49.514Z"
+      "fteAvg": 6.91,
+      "fteUpdatedAt": "2020-10-08T00:40:07.868Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:04.238Z"
     },
     {
       "state": "RI",
@@ -373,10 +376,10 @@
       "state": "SC",
       "votes": 9,
       "stateName": "South Carolina",
-      "fteAvg": -6.86,
+      "fteAvg": -5.22,
       "isBlue": false,
-      "fteUpdatedAt": "2020-09-24T19:26:12.548Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:53.646Z"
+      "fteUpdatedAt": "2020-10-08T00:40:08.106Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:04.999Z"
     },
     {
       "state": "SD",
@@ -390,36 +393,36 @@
       "votes": 11,
       "rcpAvg": -14,
       "stateName": "Tennessee",
-      "fteAvg": -12.39,
-      "fteUpdatedAt": "2020-09-24T19:26:13.138Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:56.171Z"
+      "fteAvg": -13.79,
+      "fteUpdatedAt": "2020-10-08T00:40:08.325Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:05.510Z"
     },
     {
       "state": "TX",
       "votes": 38,
-      "rcpAvg": -3.6,
+      "rcpAvg": -3.2,
       "stateName": "Texas",
-      "fteAvg": -1.92,
-      "fteUpdatedAt": "2020-09-24T19:26:13.583Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:51.538Z"
+      "fteAvg": -1.09,
+      "fteUpdatedAt": "2020-10-08T00:40:08.367Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:04.626Z"
     },
     {
       "state": "UT",
       "votes": 8,
       "stateName": "Utah",
-      "fteAvg": -12.41,
+      "fteAvg": -12.92,
       "isBlue": false,
-      "fteUpdatedAt": "2020-09-24T19:26:13.933Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:54.335Z"
+      "fteUpdatedAt": "2020-10-08T00:40:08.410Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:05.198Z"
     },
     {
       "state": "VA",
       "votes": 13,
       "rcpAvg": 11,
       "stateName": "Virginia",
-      "fteAvg": 10.09,
-      "fteUpdatedAt": "2020-09-24T19:26:14.239Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:48.377Z"
+      "fteAvg": 12.15,
+      "fteUpdatedAt": "2020-10-08T00:40:08.449Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:03.988Z"
     },
     {
       "state": "VT",
@@ -427,26 +430,26 @@
       "stateName": "Vermont",
       "isBlue": true,
       "skipFte": false,
-      "fteAvg": 30.21,
-      "fteUpdatedAt": "2020-09-24T19:26:14.585Z"
+      "fteAvg": 31.33,
+      "fteUpdatedAt": "2020-10-08T00:40:08.475Z"
     },
     {
       "state": "WA",
       "votes": 12,
       "stateName": "Washington",
-      "fteAvg": 24.43,
+      "fteAvg": 27.18,
       "isBlue": true,
-      "fteUpdatedAt": "2020-09-24T19:26:14.995Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:47.064Z"
+      "fteUpdatedAt": "2020-10-08T00:40:08.516Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:03.638Z"
     },
     {
       "state": "WI",
       "votes": 10,
-      "rcpAvg": 6.6,
+      "rcpAvg": 5.5,
       "stateName": "Wisconsin",
-      "fteAvg": 6.56,
-      "fteUpdatedAt": "2020-09-24T19:26:15.323Z",
-      "rcpUpdatedAt": "2020-09-24T19:25:50.035Z"
+      "fteAvg": 6.87,
+      "fteUpdatedAt": "2020-10-08T00:40:08.558Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:04.445Z"
     },
     {
       "state": "WV",
@@ -454,8 +457,9 @@
       "stateName": "West Virginia",
       "isBlue": false,
       "skipFte": false,
-      "fteAvg": -33.8,
-      "fteUpdatedAt": "2020-09-24T19:26:15.650Z"
+      "fteAvg": -25.83,
+      "fteUpdatedAt": "2020-10-08T00:40:08.600Z",
+      "rcpUpdatedAt": "2020-10-08T00:40:05.698Z"
     },
     {
       "state": "WY",
@@ -465,5 +469,5 @@
       "skipFte": true
     }
   ],
-  "lastUpdate": "2020-09-24T19:26:15.753Z"
+  "lastUpdate": "2020-10-08T00:40:08.709Z"
 }
