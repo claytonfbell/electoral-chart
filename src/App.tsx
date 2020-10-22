@@ -236,7 +236,7 @@ function App() {
                     className={classes.state}
                     style={{
                       backgroundColor: calculateColor(row.avg),
-                      width: `${votePct(row.votes)}%`,
+                      width: `${votePct(row.votes) - 0.01}%`,
                     }}
                   ></div>
                 </CustomToolTip>
