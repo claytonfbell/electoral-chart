@@ -328,6 +328,7 @@
       "votes": 29,
       "rcpAvg": 28.7,
       "stateName": "New York",
+      "isBlue": true,
       "fteAvg": 30.79,
       "fteUpdatedAt": "2020-10-22T21:57:09.357Z",
       "rcpUpdatedAt": "2020-10-22T21:56:56.230Z"
